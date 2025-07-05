@@ -1,0 +1,369 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.frame {
+    background-image: url(Assets/background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-clip: border-box;
+    max-height: 100vh;
+}
+
+/* Sidemenu Navbar */
+.sidemenu {
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 12px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+
+.sidemenu nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 100px;
+    padding-left: 100px;
+
+}
+
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img {
+    height: 60px;
+    width: 60px;
+    object-fit: contain;
+}
+
+.logo span {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+.sidemenu nav ul {
+    display: flex;
+    gap: 50px;
+    list-style: none;
+}
+
+.sidemenu nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18.5px;
+    transition: color 0.3s ease;
+}
+
+.sidemenu nav ul li a:hover {
+    color: rgb(46, 46, 46);
+}
+
+
+
+.left-side {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    padding: 40px;
+    margin-left: 40px;
+}
+
+
+.left-text h1 {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.main-content {
+    display: flex;
+    height: 100vh;
+    position: relative;
+}
+
+
+.left-side {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    padding: 40px;
+    z-index: 1;
+}
+
+/* Text styling */
+.left-text h1 {
+    font-size: 50px;
+}
+
+
+
+.right-side {
+    flex: 1;
+    position: relative;
+    z-index: 0;
+}
+
+
+.blur-sheet {
+    background: rgba(12, 12, 12, 0.5);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    width: 100%;
+    height: 89.5vh;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.left-text p {
+    margin: 25px 1px;
+    color: rgb(173, 173, 173);
+    font-size: 18px;
+}
+
+/* Showcase container */
+.showcase-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 180px 20px;
+}
+
+/* Slider */
+.showcase-slider {
+    position: relative;
+    width: 100%;
+    max-width: 650px;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform: translateX(100%);
+    opacity: 0;
+    transition: transform 1s ease, opacity 0.8s ease;
+    filter: blur(4px);
+    z-index: 0;
+}
+
+.slide.active {
+    transform: translateX(0%);
+    opacity: 1;
+    filter: blur(0px);
+    z-index: 1;
+}
+
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.caption {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-size: 16px;
+    color: white;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.slide.active .caption {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.color {
+    color: #ff7312;
+}
+
+/* Reasons to Choose Us Section */
+.features-section {
+    padding: 100px 30px;
+    background-color: #0d0d0d;
+    color: white;
+    text-align: center;
+}
+
+.features-section h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.features-section .brand {
+    color: #ff7312;
+}
+
+.features-section .sub {
+    color: #888;
+    font-weight: normal;
+}
+
+.features-subtext {
+    font-size: 16px;
+    color: #bbb;
+    max-width: 700px;
+    margin: 0 auto 60px;
+    line-height: 1.6;
+}
+
+/* Grid Layout */
+.features-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+/* Each Card */
+.feature-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 30px 22px;
+    width: 260px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+
+/* Icon */
+.feature-card .icon {
+    font-size: 32px;
+    color: #ff7312;
+    margin-bottom: 15px;
+}
+
+/* Title */
+.feature-card h3 {
+    font-size: 20px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+/* Description */
+.feature-card p {
+    font-size: 14px;
+    color: #ccc;
+    line-height: 1.5;
+}
+
+.features-container {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 40px 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.02);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+}
+
+/* _______________LOADER________________ */
+#terrain-loader {
+    position: fixed;
+    inset: 0;
+    background-color: #151515;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+    animation: hideLoader 3.5s forwards 3s;
+}
+
+.terrain-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 60px);
+    grid-gap: 8px;
+    transform: translateY(50px);
+}
+
+.block {
+    width: 60px;
+    height: 60px;
+    background-image: url('https://i.imgur.com/vOTZmAT.png');
+    /* Minecraft dirt block */
+    background-size: cover;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: riseUp 0.5s ease forwards;
+    animation-delay: var(--delay);
+}
+
+@keyframes riseUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes hideLoader {
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+.site-footer {
+    background: #111;
+    color: #ccc;
+    padding: 30px 20px;
+    text-align: center;
+    font-size: 14px;
+    border-top: 1px solid #333;
+}
+
+.site-footer .brand {
+    color: #ff7312;
+    font-weight: 600;
+}
+
+.footer-main {
+    margin-bottom: 10px;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.footer-links a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #ff7312;
+}

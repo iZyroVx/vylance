@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact Us | Vylance</title>
+  <link rel="stylesheet" href="contact.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body>
+  <!-- Navbar -->
+  <div class="sidemenu">
+    <nav>
+      <div class="logo">
+        <img src="Assets/white pen.png" alt="Vylance Logo" />
+      </div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contacts</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Contact Info Cards -->
+  <section class="contact-container">
+    <h1>📬 <span class="highlight">Get in Touch</span></h1>
+    <p>If you have questions, want to collaborate, or need a custom service — reach out!</p>
+
+    <div class="contact-cards">
+      <a class="contact-card" href="https://discord.gg/t5sPrqMHDf" target="_blank">
+        <i class="fab fa-discord"></i>
+        <h3>Join Our Discord</h3>
+        <p>Get real-time support and chat with our team.</p>
+      </a>
+
+      <a class="contact-card" href="#" onclick="openEmailPopup()">
+        <i class="fas fa-envelope"></i>
+        <h3>Email</h3>
+        <p>Send us a message via Gmail</p>
+      </a>
+
+      <div class="contact-card" id="whatsappCard">
+        <i class="fab fa-whatsapp"></i>
+        <h3>WhatsApp</h3>
+        <p>Message us directly for quick replies. (Coming Soon)</p>
+      </div>
+
+      <a class="contact-card" href="https://www.youtube.com/channel/UCTUSldC7diQ8MVGc039Tx1Q" target="_blank">
+        <i class="fab fa-youtube"></i>
+        <h3>YouTube</h3>
+        <p>Watch our projects and edits in action.</p>
+      </a>
+
+      <div class="contact-card" id="chatCard">
+        <i class="fas fa-comments"></i>
+        <h3>Live Chat</h3>
+        <p>Need help? Chat with us now!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WhatsApp Popup -->
+  <div class="popup-overlay" id="popup">
+    <div class="popup-box">
+      <h2>🚧 Coming Soon</h2>
+      <p>WhatsApp support will be available shortly. Stay tuned!</p>
+      <button onclick="closePopup()">Got It</button>
+    </div>
+  </div>
+
+  <!-- Email Modal -->
+  <div class="email-modal" id="emailModal">
+    <div class="email-modal-content">
+      <h2>Send Us an Email</h2>
+      <p>Click below to contact us directly via Gmail.</p>
+      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=sharjeelplayz36@gmail.com&su=Service%20Inquiry&body=Hi%20Vylance%2C%20I%20would%20like%20to%20ask%20about..."
+        target="_blank" class="gmail-button">📧 Open Gmail</a>
+      <button onclick="closeEmailPopup()">Close</button>
+    </div>
+  </div>
+
+  <!-- Chat Bubble -->
+  <div class="chat-bubble" id="chatBubble">
+    <div class="chat-header">
+      <span>Live Support</span>
+      <button onclick="closeChat()">✖</button>
+    </div>
+    <div class="chat-body" id="chatBody">
+      <div class="message support">
+        👋 Hello! Welcome to <strong>Vylance Support</strong>.<br><br>
+        🚀 For fast help or urgent orders, connect with us:<br>
+        🔗 <a href="https://discord.gg/t5sPrqMHDf" target="_blank">Join our Discord</a><br>
+        📞 WhatsApp (Coming Soon)<br>
+        📧 Email: <a href="mailto:sharjeelplayz36@gmail.com">sharjeelplayz36@gmail.com</a><br><br>
+        📝 <strong>Want us to contact you?</strong><br>
+        Just drop your <em>email, Discord tag, or phone number</em> below along with your message.
+      </div>
+    </div>
+    <div class="chat-input">
+      <input type="text" id="chatInput" placeholder="Type your message..." />
+      <button onclick="sendMessage()">➤</button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 Vylance. All Rights Reserved. (Version 1.0)</p>
+    <div class="footer-links">
+      <a href="#">Privacy & Policy</a>
+      <a href="#">Terms & Conditions</a>
+      <a href="#">Cookie Policy</a>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // WhatsApp Popup
+    const popup = document.getElementById("popup");
+    const whatsappCard = document.getElementById("whatsappCard");
+    whatsappCard.addEventListener("click", () => popup.classList.add("show"));
+    function closePopup() { popup.classList.remove("show"); }
+
+    // Email Modal
+    const emailModal = document.getElementById("emailModal");
+    function openEmailPopup() { emailModal.style.display = "block"; }
+    function closeEmailPopup() { emailModal.style.display = "none"; }
+    window.addEventListener("click", e => { if (e.target === emailModal) closeEmailPopup(); });
+
+    // Live Chat
+    const chatCard = document.getElementById("chatCard");
+    const chatBubble = document.getElementById("chatBubble");
+    const chatBody = document.getElementById("chatBody");
+    const chatInput = document.getElementById("chatInput");
+
+    chatCard.addEventListener("click", () => {
+      chatBubble.classList.add("show");
+      chatInput.focus();
+    });
+
+    function closeChat() {
+      chatBubble.classList.remove("show");
+    }
+
+    async function sendMessage() {
+      const msg = chatInput.value.trim();
+      if (!msg) return;
+
+      const userMsg = document.createElement("div");
+      userMsg.className = "message user";
+      userMsg.textContent = msg;
+      chatBody.appendChild(userMsg);
+      chatInput.value = "";
+      chatBody.scrollTop = chatBody.scrollHeight;
+
+      // Webhook POST to Discord
+      try {
+        await fetch("https://discord.com/api/webhooks/1390996407095132220/KQ6znTuNo4BGBuh9fPmzg98YbdY2hVlJ6Wd-Rk8z7dkv9LHvSABnEgxQSVNco3rNESZg", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            content: `📩 **New Live Chat Message:**\n${msg}`
+          })
+        });
+      } catch (err) {
+        console.error("Webhook error:", err);
+      }
+
+      // Simulated response
+      setTimeout(() => {
+        const reply = document.createElement("div");
+        reply.className = "message support";
+        reply.textContent = "Thanks for messaging! We'll get back to you shortly.";
+        chatBody.appendChild(reply);
+        chatBody.scrollTop = chatBody.scrollHeight;
+      }, 1000);
+    }
+
+    // Send on Enter
+    chatInput.addEventListener("keypress", e => {
+      if (e.key === "Enter") sendMessage();
+    });
+  </script>
+</body>
+</html>

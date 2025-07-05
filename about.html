@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About | Vylance</title>
+    <link rel="stylesheet" href="about.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <div class="sidemenu">
+        <nav>
+            <div class="logo">
+                <img src="Assets/white pen.png" alt="Vylance Logo" />
+            </div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contacts</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Hero -->
+    <section class="about-hero">
+        <h1>About <span class="highlight">Vylance</span></h1>
+        <p>Your go-to team for creative, reliable, and gamer-focused digital services.</p>
+    </section>
+    <section class="about-content">
+        <div class="about-box">
+
+            <h2 class="about-heading">🎯 Our Mission</h2>
+            <div class="about-toggle">
+                <p>
+                    We're here to help creators, gamers, and brands shine online. Whether you're building a Minecraft
+                    server or launching a YouTube channel, we’re your creative power-up!
+                </p>
+            </div>
+
+            <h2 class="about-heading">💡 What We Do</h2>
+            <div class="about-toggle">
+                <p>
+                    From jaw-dropping thumbnails and smooth video edits to websites, logos, and full Minecraft server
+                    setups — we do it all with pixel-perfect precision.
+                </p>
+            </div>
+
+            <h2 class="about-heading">💪 Why Choose Us?</h2>
+            <div class="about-toggle">
+                <ul>
+                    <li>🟧 Creative minds + gamer brains</li>
+                    <li>🟧 Fast delivery — no drama</li>
+                    <li>🟧 Secure transactions</li>
+                    <li>🟧 Friendly, active, and helpful staff</li>
+                    <li>🟧 Designed for creators, built for legends</li>
+                </ul>
+            </div>
+
+            <h2 class="about-heading">🧠 Our Team</h2>
+            <div class="about-toggle">
+                <p>
+                    Vylance is powered by a tight squad of editors, coders, designers, animators, and setup pros — each
+                    one focused on delivering top-tier work and leveling up your projects.
+                </p>
+            </div>
+
+            <h2 class="about-heading">🧭 Values We Stand By</h2>
+            <div class="about-toggle">
+                <ul>
+                    <li>🔸 Creativity with purpose</li>
+                    <li>🔸 Clients come first</li>
+                    <li>🔸 Keep it real & reliable</li>
+                    <li>🔸 Grow together</li>
+                </ul>
+            </div>
+
+            <h2 class="about-heading">🚀 Our Future Goals</h2>
+            <div class="about-toggle">
+                <p>
+                    To expand into more games, build a creator hub, launch our own marketplace, and continue being the
+                    go-to service for digital creators and gamers worldwide.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+
+
+
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-main">
+            <p>&copy; 2025 <span class="brand">Vylance</span>. All Rights Reserved. (Version 1.0)</p>
+        </div>
+        <div class="footer-links">
+            <a href="#">Privacy & Policy</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Cookie Policy</a>
+        </div>
+    </footer>
+    <script>
+        const headings = document.querySelectorAll(".about-heading");
+
+        headings.forEach((heading) => {
+            heading.addEventListener("click", () => {
+                const content = heading.nextElementSibling;
+                heading.classList.toggle("active");
+                content.classList.toggle("open");
+            });
+        });
+    </script>
+
+
+
+</body>
+
+</html>
