@@ -128,6 +128,9 @@ body {
     justify-content: center;
     /* ✅ This centers the last row */
 }
+.services-grid a{
+    text-decoration: none;
+}
 
 /* Card */
 .service-card {
