@@ -348,3 +348,60 @@ body {
     transform: scale(1);
   }
 }
+/* Welcome Popup Styles */
+.welcome-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.welcome-popup-overlay.show {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.welcome-popup-box {
+  background: #1a1a1a;
+  padding: 30px 40px;
+  border-radius: 12px;
+  text-align: center;
+  color: #fff;
+  max-width: 400px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+}
+
+.welcome-popup-box h2 {
+  margin-bottom: 15px;
+  font-size: 24px;
+  color: #ff7312;
+}
+
+.welcome-popup-box p {
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.welcome-popup-box button {
+  background-color: #ff7312;
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  font-size: 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.welcome-popup-box button:hover {
+  background-color: #e86208;
+}

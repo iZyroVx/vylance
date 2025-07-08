@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contact Us | Vylance</title>
+  <title>Order | Vylance</title>
   <link rel="stylesheet" href="contact.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
@@ -20,14 +20,14 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="services.html">Services</a></li>
-        <li><a href="contact.html">Contacts</a></li>
+        <li><a href="contact.html">Order</a></li>
       </ul>
     </nav>
   </div>
 
   <!-- Contact Info Cards -->
   <section class="contact-container">
-    <h1>📬 <span class="highlight">Get in Touch</span></h1>
+    <h1>📬 Want to<span class="highlight"> Order</span> Something</h1>
     <p>If you have questions, want to collaborate, or need a custom service — reach out!</p>
 
     <div class="contact-cards">
@@ -105,6 +105,20 @@
       <button onclick="sendMessage()">➤</button>
     </div>
   </div>
+  <!-- Welcome Popup -->
+  <div class="welcome-popup-overlay" id="welcomePopup">
+    <div class="welcome-popup-box">
+      <h2><i class="fas fa-hand-sparkles"></i> Welcome to <span style="color:#ff7312;">Vylance</span>!</h2>
+      <p>
+        <i class="fas fa-tools"></i> We are currently working on direct website orders.<br>
+        <i class="fas fa-comments"></i> Till then, place orders via <strong>Discord</strong>, <strong>Email</strong>, or
+        <strong>Fiverr</strong>.
+      </p>
+      <button onclick="closeWelcomePopup()"><i class="fas fa-arrow-right"></i> Let's Go</button>
+    </div>
+  </div>
+
+
 
   <!-- Footer -->
   <footer class="footer">
@@ -183,6 +197,17 @@
     chatInput.addEventListener("keypress", e => {
       if (e.key === "Enter") sendMessage();
     });
+    // Welcome popup
+    window.addEventListener("DOMContentLoaded", () => {
+      const welcome = document.getElementById("welcomePopup");
+      welcome.classList.add("show");
+    });
+
+    function closeWelcomePopup() {
+      document.getElementById("welcomePopup").classList.remove("show");
+    }
+
   </script>
 </body>
+
 </html>

@@ -121,6 +121,15 @@ body {
   cursor: pointer;
   position: relative;
   padding-right: 30px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.about-heading i {
+  color: #ff7312;
+  font-size: 22px;
+  min-width: 24px;
 }
 
 .about-heading::after {
@@ -179,6 +188,15 @@ body {
 
 .about-toggle ul li {
   margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.about-toggle ul li i {
+  color: #ff7312;
+  font-size: 16px;
+  min-width: 18px;
 }
 
 /* Footer */
