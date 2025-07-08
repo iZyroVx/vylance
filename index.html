@@ -8,6 +8,7 @@
     <link rel="icon" type="image/png" href="Assets/white pen.png" />
     <link rel="stylesheet" href="home.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" as="style">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <!-- Google tag (gtag.js) -->
@@ -22,6 +23,12 @@
 </head>
 
 <body>
+    <div id="preloader">
+        <div class="pixel-loader">
+            <div class="cube"></div>
+            <p class="loading-text"></p>
+        </div>
+    </div>
     <div class="frame">
         <!-- Navbar -->
         <div class="sidemenu">
@@ -159,11 +166,25 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({
-            duration: 800, // animation speed
+            duration: 1500, // animation speed
             once: true     // animate only once
         });
     </script>
     <!-- _________________LOADER_______________ -->
+    <script>
+        window.addEventListener("load", () => {
+            const preloader = document.getElementById("preloader");
+
+            // Wait a little after everything is loaded (looks smoother)
+            setTimeout(() => {
+                preloader.style.opacity = "0";
+                setTimeout(() => {
+                    preloader.style.display = "none";
+                }, 500); // matches CSS fade duration
+            }, 1500); // hold the loader a bit even after load
+        });
+    </script>
+
 </body>
 
 </html>
