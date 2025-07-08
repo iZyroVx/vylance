@@ -2,11 +2,11 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Our Services | Vylance</title>
-    <link rel="stylesheet" href="services.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="services.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 
 <body>
@@ -31,92 +31,67 @@
         </div>
 
         <div class="services-grid">
-            <div class="service-card" onclick="showCard(1)">
-                <i class="fas fa-image"></i>
+            <!-- 14 Service Cards -->
+            <!-- Replace onclicks with actual numbers (1 to 14) -->
+            <div class="service-card" onclick="showCard(1)"><i class="fas fa-image"></i>
                 <h3>Thumbnail</h3>
                 <p>Custom thumbnails designed to grab attention and increase clicks.</p>
             </div>
-
-            <div class="service-card" onclick="showCard(2)">
-                <i class="fas fa-pen-nib"></i>
+            <div class="service-card" onclick="showCard(2)"><i class="fas fa-pen-nib"></i>
                 <h3>Logos</h3>
                 <p>Unique and creative logo designs that reflect your identity.</p>
             </div>
-
-            <div class="service-card" onclick="showCard(3)">
-                <i class="fas fa-object-group"></i>
+            <div class="service-card" onclick="showCard(3)"><i class="fas fa-object-group"></i>
                 <h3>Banner</h3>
                 <p>Clean, bold banners for YouTube, Discord, Twitch, and more.</p>
             </div>
-
-            <div class="service-card" onclick="showCard(4)">
-                <i class="fas fa-code"></i>
+            <div class="service-card" onclick="showCard(4)"><i class="fas fa-code"></i>
                 <h3>Web Development</h3>
                 <p>From portfolio sites to full web platforms — built for creators.</p>
             </div>
-
-            <div class="service-card" onclick="showCard(5)">
-                <i class="fas fa-folder-open"></i>
+            <div class="service-card" onclick="showCard(5)"><i class="fas fa-folder-open"></i>
                 <h3>Portfolios</h3>
                 <p>Showcase your work in a professional and stunning portfolio.</p>
             </div>
-
-            <div class="service-card" onclick="showCard(6)">
-                <i class="fas fa-server"></i>
+            <div class="service-card" onclick="showCard(6)"><i class="fas fa-server"></i>
                 <h3>Minecraft Server</h3>
                 <p>Full Minecraft server setup, plugins, config & optimizations.</p>
             </div>
-
-            <div class="service-card" onclick="showCard(7)">
-                <i class="fas fa-film"></i>
+            <div class="service-card" onclick="showCard(7)"><i class="fas fa-film"></i>
                 <h3>Video Editing</h3>
                 <p>Smooth edits with transitions, effects, and top-tier polish.</p>
             </div>
-
-            <div class="service-card" onclick="showCard(8)">
-                <i class="fas fa-cubes"></i>
+            <div class="service-card" onclick="showCard(8)"><i class="fas fa-cubes"></i>
                 <h3>Texture Packs</h3>
                 <p>Custom texture packs tailored to your theme or play style.</p>
             </div>
-
-            <div class="service-card" onclick="showCard(9)">
-                <i class="fas fa-clapperboard"></i>
+            <div class="service-card" onclick="showCard(9)"><i class="fas fa-clapperboard"></i>
                 <h3>Animation</h3>
                 <p>2D/3D animations to bring intros, logos, or ideas to life.</p>
             </div>
-
-            <div class="service-card" onclick="showCard(10)">
-                <i class="fas fa-wand-magic-sparkles"></i>
+            <div class="service-card" onclick="showCard(10)"><i class="fas fa-wand-magic-sparkles"></i>
                 <h3>Editing AI Tools</h3>
                 <p>We use AI to assist fast, smart, and efficient editing workflows.</p>
             </div>
-
-            <div class="service-card" onclick="showCard(11)">
-                <i class="fas fa-comments"></i>
+            <div class="service-card" onclick="showCard(11)"><i class="fas fa-comments"></i>
                 <h3>DC Server Setup</h3>
                 <p>Professional Discord setup with roles, bots, and security.</p>
             </div>
-
-            <div class="service-card" onclick="showCard(12)">
-                <i class="fas fa-user"></i>
+            <div class="service-card" onclick="showCard(12)"><i class="fas fa-user"></i>
                 <h3>Skins</h3>
                 <p>Custom Minecraft skins for your character or server staff.</p>
             </div>
-
-            <div class="service-card" onclick="showCard(13)">
-                <i class="fas fa-book"></i>
+            <div class="service-card" onclick="showCard(13)"><i class="fas fa-book"></i>
                 <h3>Courses</h3>
                 <p>We offer courses on editing, design, and server setup.</p>
             </div>
-
-            <div class="service-card" onclick="showCard(14)">
-                <i class="fas fa-seedling"></i>
+            <div class="service-card" onclick="showCard(14)"><i class="fas fa-seedling"></i>
                 <h3>Grow-a-Garden</h3>
                 <p>Get Grow-a-Garden items like sheckles, pets, etc.</p>
             </div>
-
         </div>
     </section>
+
     <!-- Overlay -->
     <div id="overlay" onclick="hideCard()"></div>
 
@@ -125,25 +100,18 @@
         <span class="close-btn" onclick="hideCard()">&times;</span>
         <h2 id="popupTitle"></h2>
         <p id="popupDesc"></p>
-
-        <!-- Image -->
-        <img id="popupImage" src="" alt="Service Example"
-            style="width: 100%; border-radius: 10px; margin-top: 15px; display: none;" />
-
-        <!-- Video -->
-        <video id="popupVideo" controls style="width: 100%; border-radius: 10px; margin-top: 15px; display: none;">
-            <source id="popupVideoSrc" src="" type="video/mp4">
+        <img id="popupImage" src="" style="width:100%;border-radius:10px;display:none;margin-top:15px;" />
+        <video id="popupVideo" controls style="width:100%;border-radius:10px;display:none;margin-top:15px;">
+            <source id="popupVideoSrc" src="" type="video/mp4" />
             Your browser does not support the video tag.
         </video>
-
-        <!-- Buttons UNDER image/video now -->
-        <div id="popupButtons" style="margin-top: 15px; display: none;"></div>
+        <div id="popupButtons" style="margin-top:15px;display:none;"></div>
     </div>
+
     <div class="contact-cta">
         <h2>Ready to bring your ideas to life?</h2>
         <a href="contact.html" class="contact-button"><i class="fas fa-paper-plane"></i> Order Now</a>
     </div>
-
 
     <footer class="site-footer">
         <div class="footer-main">
@@ -155,109 +123,40 @@
             <a href="#">Cookie Policy</a>
         </div>
     </footer>
+
     <!-- SCRIPT -->
     <script>
         const services = {
-            1: {
-                title: "Thumbnail",
-                desc: "We create custom YouTube thumbnails optimized for engagement and high click-through rate. Like this.",
-                image: "https://i.ibb.co/67sBVpHw/Thumbnail-2.png"
-            },
-            2: {
-                title: "Logos",
-                desc: "Creative and custom logo design to build your unique brand.",
-                image: "Assets/PFP 1.png"
-            },
-            3: {
-                title: "Banner",
-                desc: "Banners for YouTube, Twitch, and Discord that stand out.",
-                image: "https://i.ibb.co/wFgy8X76/80227-loat-banner-ig-hacking-tel.jpg"
-            },
-            4: {
-                title: "Web Development",
-                desc: "Build fast, mobile-friendly websites tailored to creators and brands.",
-                image: "https://i.ibb.co/JWSVxq4c/Screenshot-30.png",
-                buttons: [
-                    { text: "Visit Demo", url: "https://vylanceontop.vercel.app/" },
-                ]
-            },
-            5: {
-                title: "Portfolios",
-                desc: "Showcase your projects in a modern portfolio designed to impress clients.",
-                image: "https://i.ibb.co/0Rq6qsZN/website.png",
-                buttons: [
-                    { text: "See Portfolio", url: "https://portfoliozyrox.netlify.app/" }
-                ]
-            },
-            6: {
-                title: "Minecraft Server",
-                desc: "We set up complete Minecraft servers with plugins, configs, and optimization.",
-                image: "https://i.ibb.co/CszsVXsB/Purple-Prison-Pv-P-Server.webp"
-            },
-            7: {
-                title: "Video Editing",
-                desc: "Smooth, cinematic edits with effects, transitions, and polish for content creators.",
-                video: "Assets/Video Editing.mp4"
-            },
-            8: {
-                title: "Texture Packs",
-                desc: "Custom Minecraft texture packs built for your server or personal theme.",
-                image: "https://i.ibb.co/hwnZXxX/txt-pack.png"
-            },
-            9: {
-                title: "Animation",
-                desc: "Animated intros, outros, logos, and more to boost your brand.",
-                video: "Assets/Animation.mp4"
-            },
-            10: {
-                title: "Editing AI Tools",
-                desc: "🔧 POWERED BY AI TOOLS\n💡 Boost productivity with cutting-edge AI\n🎞️ Automate video editing, upscaling & more\n🧠 Smart content generation & enhancement\n⚙️ Streamline repetitive tasks effortlessly\n📈 Work faster, smarter, and creatively\n🚀 Level up your workflow with AI precision"
-            }, 
-            11: {
-                title: "DC Server Setup",
-                desc: "Professional Discord server setup with bots, roles, channels, and moderation.",
-                image: "https://i.ibb.co/s9Zm6S3f/Screenshot-31.png",
-                buttons: [
-                    { text: "See Example", url: "https://discord.gg/EzcK3dkR" }
-                ]
-            },
-            12: {
-                title: "Skins",
-                desc: "Custom Minecraft skins for your character, team, or server staff.",
-                image: "https://i.ibb.co/Tx4K8bwP/acfb46c7-d48b-4372-b2de-4a682e8c13e4.png"
-            },
-            13: {
-                title: "Courses",
-                desc: "🔥 CHATGPT COMPETITIVE ANALYSIS\n📊 Analyze ChatGPT & rivals\n🧠 Master AI market intelligence\n📈 Strategic decision-making tools\n🚀 Gain competitive advantage\n🔍 Unlock deep AI insights\n💼 Optimize your AI strategy"
-            },
-            14: {
-                title: "Grow-a-Garden",
-                desc: "Buy Grow-a-Garden items like sheckles, pets, and rare custom content.",
-                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-0zMhEoNWW18_euh2UwuCOWoBrnkVMFQYww&s",
-            }
-
-
+            1: { title: "Thumbnail", desc: "Custom YouTube thumbnails for high CTR.", image: "https://i.ibb.co/67sBVpHw/Thumbnail-2.png" },
+            2: { title: "Logos", desc: "Creative logo design to represent your brand.", image: "Assets/PFP 1.png" },
+            3: { title: "Banner", desc: "Bold banners for YouTube, Discord, and Twitch.", image: "https://i.ibb.co/wFgy8X76/80227-loat-banner-ig-hacking-tel.jpg" },
+            4: { title: "Web Development", desc: "Websites made for creators.", image: "https://i.ibb.co/JWSVxq4c/Screenshot-30.png", buttons: [{ text: "Visit Demo", url: "https://vylanceontop.vercel.app/" }] },
+            5: { title: "Portfolios", desc: "Modern portfolios to impress clients.", image: "https://i.ibb.co/0Rq6qsZN/website.png", buttons: [{ text: "See Portfolio", url: "https://portfoliozyrox.netlify.app/" }] },
+            6: { title: "Minecraft Server", desc: "We setup your server with optimization.", image: "https://i.ibb.co/CszsVXsB/Purple-Prison-Pv-P-Server.webp" },
+            7: { title: "Video Editing", desc: "Cinematic edits with polish.", video: "Assets/Video Editing.mp4" },
+            8: { title: "Texture Packs", desc: "Custom packs for your playstyle.", image: "https://i.ibb.co/hwnZXxX/txt-pack.png" },
+            9: { title: "Animation", desc: "Intros, outros, and logo animations.", video: "Assets/Animation.mp4" },
+            10: { title: "Editing AI Tools", desc: "Boost workflow with AI tools." },
+            11: { title: "DC Server Setup", desc: "Full Discord server setup.", image: "https://i.ibb.co/s9Zm6S3f/Screenshot-31.png", buttons: [{ text: "See Example", url: "https://discord.gg/EzcK3dkR" }] },
+            12: { title: "Skins", desc: "Custom Minecraft skins.", image: "https://i.ibb.co/Tx4K8bwP/acfb46c7-d48b-4372-b2de-4a682e8c13e4.png" },
+            13: { title: "Courses", desc: "🔥 CHATGPT COMPETITIVE ANALYSIS\n📊 Analyze ChatGPT & rivals\n🚀 Gain AI advantage" },
+            14: { title: "Grow-a-Garden", desc: "Buy pets, sheckles, and items.", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-0zMhEoNWW18_euh2UwuCOWoBrnkVMFQYww&s" }
         };
 
         function showCard(id) {
             const service = services[id];
-
-            // Title & Desc
             document.getElementById("popupTitle").innerText = service.title;
             document.getElementById("popupDesc").innerText = service.desc;
 
-            // Image
+            // Handle image
             const img = document.getElementById("popupImage");
-            if (service.image) {
-                img.src = service.image;
-                img.style.display = "block";
-            } else {
-                img.style.display = "none";
-            }
+            img.style.display = service.image ? "block" : "none";
+            if (service.image) img.src = service.image;
 
-            // Video
+            // Handle video
             const video = document.getElementById("popupVideo");
             const videoSrc = document.getElementById("popupVideoSrc");
+            video.pause(); video.removeAttribute("src"); videoSrc.removeAttribute("src"); video.load();
             if (service.video) {
                 videoSrc.src = service.video;
                 video.load();
@@ -266,39 +165,33 @@
                 video.style.display = "none";
             }
 
-            // Buttons
+            // Handle buttons
             const buttonsDiv = document.getElementById("popupButtons");
-            buttonsDiv.innerHTML = ""; // Clear previous buttons
-            if (service.buttons && service.buttons.length > 0) {
+            buttonsDiv.innerHTML = "";
+            if (service.buttons) {
                 buttonsDiv.style.display = "block";
                 service.buttons.forEach(btn => {
                     const a = document.createElement("a");
-                    a.href = btn.url;
-                    a.target = "_blank";
-                    a.innerText = btn.text;
-                    a.className = "popup-button";
+                    a.href = btn.url; a.innerText = btn.text;
+                    a.target = "_blank"; a.className = "popup-button";
                     buttonsDiv.appendChild(a);
                 });
             } else {
                 buttonsDiv.style.display = "none";
             }
 
-            // Show Popup
+            // Show popup
             document.getElementById("popupCard").classList.add("show");
             document.getElementById("overlay").classList.add("show");
         }
 
-
         function hideCard() {
             document.getElementById("popupCard").classList.remove("show");
             document.getElementById("overlay").classList.remove("show");
+            const video = document.getElementById("popupVideo");
+            video.pause(); video.currentTime = 0;
         }
     </script>
-
-
-
-
-
 </body>
 
 </html>
