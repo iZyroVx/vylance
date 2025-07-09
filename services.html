@@ -7,6 +7,39 @@
     <title>Our Services | Vylance</title>
     <link rel="stylesheet" href="services.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        /* Loader */
+        .loader {
+            border: 3px solid #fff;
+            border-top: 3px solid #ff7312;
+            /* Primary color */
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            animation: spin 0.7s linear infinite;
+            margin: 0 auto;
+            display: none;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Optional: dim overlay */
+        .loading-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+
 </head>
 
 <body>
@@ -89,6 +122,11 @@
                 <h3>Grow-a-Garden</h3>
                 <p>Get Grow-a-Garden items like sheckles, pets, etc.</p>
             </div>
+            <div class="service-card" onclick="showCard(16)">
+                <i class="fas fa-plug-circle-bolt"></i>
+                <h3>MC Plugins</h3>
+                <p>Glitch SMP, Token SMP, custom weapons, and more — ready to use!</p>
+            </div>
         </div>
     </section>
 
@@ -97,6 +135,9 @@
 
     <!-- Popup Card -->
     <div id="popupCard" class="popup-card">
+        <div id="popupLoader" class="loading-overlay">
+            <div class="loader"></div>
+        </div>
         <span class="close-btn" onclick="hideCard()">&times;</span>
         <h2 id="popupTitle"></h2>
         <p id="popupDesc"></p>
@@ -140,9 +181,19 @@
             11: { title: "DC Server Setup", desc: "Full Discord server setup.", image: "https://i.ibb.co/s9Zm6S3f/Screenshot-31.png", buttons: [{ text: "See Example", url: "https://discord.gg/EzcK3dkR" }] },
             12: { title: "Skins", desc: "Custom Minecraft skins.", image: "https://i.ibb.co/Tx4K8bwP/acfb46c7-d48b-4372-b2de-4a682e8c13e4.png" },
             13: { title: "Courses", desc: "🔥 CHATGPT COMPETITIVE ANALYSIS\n📊 Analyze ChatGPT & rivals\n🚀 Gain AI advantage" },
-            14: { title: "Grow-a-Garden", desc: "Buy pets, sheckles, and items.", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-0zMhEoNWW18_euh2UwuCOWoBrnkVMFQYww&s" }
-        };
+            14: { title: "Grow-a-Garden", desc: "Buy pets, sheckles, and items.", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-0zMhEoNWW18_euh2UwuCOWoBrnkVMFQYww&s" },
+            16: {
+                title: "Minecraft Plugins",
+                desc: `🧩 Glitch SMP Plugin
+            ⚔️ Mark SMP Plugin
+            🌀 Bizarre SMP Plugin S2
+            💰 Token SMP Plugin
+            💪 Strength SMP Basic Plugin
+            🛠️ Premade Custom Weapons`,
+                buttons: [{ text: "Order Now", url: "contact.html" }]
+            },
 
+        };
         function showCard(id) {
             const service = services[id];
             document.getElementById("popupTitle").innerText = service.title;
@@ -191,6 +242,54 @@
             const video = document.getElementById("popupVideo");
             video.pause(); video.currentTime = 0;
         }
+        function showCard(id) {
+            // Show loader
+            document.getElementById("popupLoader").style.display = "block";
+            document.getElementById("popupCard").classList.add("show");
+            document.getElementById("overlay").classList.add("show");
+
+            setTimeout(() => {
+                const service = services[id];
+                document.getElementById("popupTitle").innerText = service.title;
+                document.getElementById("popupDesc").innerText = service.desc;
+
+                // Image
+                const img = document.getElementById("popupImage");
+                img.style.display = service.image ? "block" : "none";
+                if (service.image) img.src = service.image;
+
+                // Video
+                const video = document.getElementById("popupVideo");
+                const videoSrc = document.getElementById("popupVideoSrc");
+                video.pause(); video.removeAttribute("src"); videoSrc.removeAttribute("src"); video.load();
+                if (service.video) {
+                    videoSrc.src = service.video;
+                    video.load();
+                    video.style.display = "block";
+                } else {
+                    video.style.display = "none";
+                }
+
+                // Buttons
+                const buttonsDiv = document.getElementById("popupButtons");
+                buttonsDiv.innerHTML = "";
+                if (service.buttons) {
+                    buttonsDiv.style.display = "block";
+                    service.buttons.forEach(btn => {
+                        const a = document.createElement("a");
+                        a.href = btn.url; a.innerText = btn.text;
+                        a.target = "_blank"; a.className = "popup-button";
+                        buttonsDiv.appendChild(a);
+                    });
+                } else {
+                    buttonsDiv.style.display = "none";
+                }
+
+                // Hide loader after everything is set
+                document.getElementById("popupLoader").style.display = "none";
+            }, 400); // Adjust delay as needed
+        }
+
     </script>
 </body>
 
