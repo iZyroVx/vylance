@@ -29,12 +29,16 @@ body {
   width: 100vw;
 }
 
+
 .sidemenu nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 100px;
+  padding-right: 100px;
+  padding-left: 100px;
+
 }
+
 
 .logo {
   display: flex;
@@ -54,6 +58,7 @@ body {
   font-weight: bold;
 }
 
+
 .sidemenu nav ul {
   display: flex;
   gap: 50px;
@@ -68,7 +73,7 @@ body {
 }
 
 .sidemenu nav ul li a:hover {
-  color: #2e2e2e;
+  color: #ff7312;
 }
 
 /* Hero Section */
