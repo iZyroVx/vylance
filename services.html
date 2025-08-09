@@ -1,134 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Our Services | Vylance</title>
     <link rel="stylesheet" href="services.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
     <link rel="icon" type="image/png" href="Assets/white pen.png" />
     <style>
-        /* Loader */
-        .loader {
-            border: 3px solid #fff;
-            border-top: 3px solid #ff7312;
-            /* Primary color */
-            border-radius: 50%;
-            width: 24px;
-            height: 24px;
-            animation: spin 0.7s linear infinite;
-            margin: 0 auto;
-            display: none;
+      /* Loader */
+      .loader {
+        border: 3px solid #fff;
+        border-top: 3px solid #ff7312;
+        /* Primary color */
+        border-radius: 50%;
+        width: 24px;
+        height: 24px;
+        animation: spin 0.7s linear infinite;
+        margin: 0 auto;
+        display: none;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
         }
 
-        @keyframes spin {
-            0% {
-                transform: rotate(0deg);
-            }
-
-            100% {
-                transform: rotate(360deg);
-            }
+        100% {
+          transform: rotate(360deg);
         }
+      }
 
-        /* Optional: dim overlay */
-        .loading-overlay {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
+      /* Optional: dim overlay */
+      .loading-overlay {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
     </style>
+  </head>
 
-</head>
-
-<body>
+  <body>
     <div class="sidemenu">
-        <nav>
-            <div class="logo">
-                <img src="Assets/white pen.png" alt="Vylance Logo" />
-            </div>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="contact.html">Order</a></li>
-            </ul>
-        </nav>
+      <nav>
+        <div class="logo">
+          <img src="Assets/white pen.png" alt="Vylance Logo" />
+        </div>
+        <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+        <!-- Hamburger icon -->
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Order</a></li>
+        </ul>
+      </nav>
     </div>
 
     <section class="services-section">
-        <div class="services-header">
-            <h1>🛒 Our <span class="highlight">Services</span></h1>
-            <p>Everything you need to build, design, and level up your digital presence.</p>
-        </div>
+      <div class="services-header">
+        <h1>🛒 Our <span class="highlight">Services</span></h1>
+        <p>
+          Everything you need to build, design, and level up your digital
+          presence.
+        </p>
+      </div>
 
-        <div class="services-grid">
-            <!-- 14 Service Cards -->
-            <!-- Replace onclicks with actual numbers (1 to 14) -->
-            <div class="service-card" onclick="showCard(1)"><i class="fas fa-image"></i>
-                <h3>Thumbnail</h3>
-                <p>Custom thumbnails designed to grab attention and increase clicks.</p>
-            </div>
-            <div class="service-card" onclick="showCard(2)"><i class="fas fa-pen-nib"></i>
-                <h3>Logos</h3>
-                <p>Unique and creative logo designs that reflect your identity.</p>
-            </div>
-            <div class="service-card" onclick="showCard(3)"><i class="fas fa-object-group"></i>
-                <h3>Banner</h3>
-                <p>Clean, bold banners for YouTube, Discord, Twitch, and more.</p>
-            </div>
-            <div class="service-card" onclick="showCard(4)"><i class="fas fa-code"></i>
-                <h3>Web Development</h3>
-                <p>From portfolio sites to full web platforms — built for creators.</p>
-            </div>
-            <div class="service-card" onclick="showCard(5)"><i class="fas fa-folder-open"></i>
-                <h3>Portfolios</h3>
-                <p>Showcase your work in a professional and stunning portfolio.</p>
-            </div>
-            <div class="service-card" onclick="showCard(6)"><i class="fas fa-server"></i>
-                <h3>Minecraft Server</h3>
-                <p>Full Minecraft server setup, plugins, config & optimizations.</p>
-            </div>
-            <div class="service-card" onclick="showCard(7)"><i class="fas fa-film"></i>
-                <h3>Video Editing</h3>
-                <p>Smooth edits with transitions, effects, and top-tier polish.</p>
-            </div>
-            <div class="service-card" onclick="showCard(8)"><i class="fas fa-cubes"></i>
-                <h3>Texture Packs</h3>
-                <p>Custom texture packs tailored to your theme or play style.</p>
-            </div>
-            <div class="service-card" onclick="showCard(9)"><i class="fas fa-clapperboard"></i>
-                <h3>Animation</h3>
-                <p>2D/3D animations to bring intros, logos, or ideas to life.</p>
-            </div>
-            <div class="service-card" onclick="showCard(10)"><i class="fas fa-wand-magic-sparkles"></i>
-                <h3>Editing AI Tools</h3>
-                <p>We use AI to assist fast, smart, and efficient editing workflows.</p>
-            </div>
-            <div class="service-card" onclick="showCard(11)"><i class="fas fa-comments"></i>
-                <h3>DC Server Setup</h3>
-                <p>Professional Discord setup with roles, bots, and security.</p>
-            </div>
-            <div class="service-card" onclick="showCard(12)"><i class="fas fa-user"></i>
-                <h3>Skins</h3>
-                <p>Custom Minecraft skins for your character or server staff.</p>
-            </div>
-            <div class="service-card" onclick="showCard(13)"><i class="fas fa-book"></i>
-                <h3>Courses</h3>
-                <p>We offer courses on editing, design, and server setup.</p>
-            </div>
-            <div class="service-card" onclick="showCard(14)"><i class="fas fa-seedling"></i>
-                <h3>Grow-a-Garden</h3>
-                <p>Get Grow-a-Garden items like sheckles, pets, etc.</p>
-            </div>
-            <div class="service-card" onclick="showCard(16)">
-                <i class="fas fa-plug-circle-bolt"></i>
-                <h3>MC Plugins</h3>
-                <p>Glitch SMP, Token SMP, custom weapons, and more — ready to use!</p>
-            </div>
+      <div class="services-grid">
+        <!-- 14 Service Cards -->
+        <!-- Replace onclicks with actual numbers (1 to 14) -->
+        <div class="service-card" onclick="showCard(1)">
+          <i class="fas fa-image"></i>
+          <h3>Thumbnail</h3>
+          <p>
+            Custom thumbnails designed to grab attention and increase clicks.
+          </p>
         </div>
+        <div class="service-card" onclick="showCard(2)">
+          <i class="fas fa-pen-nib"></i>
+          <h3>Logos</h3>
+          <p>Unique and creative logo designs that reflect your identity.</p>
+        </div>
+        <div class="service-card" onclick="showCard(3)">
+          <i class="fas fa-object-group"></i>
+          <h3>Banner</h3>
+          <p>Clean, bold banners for YouTube, Discord, Twitch, and more.</p>
+        </div>
+        <div class="service-card" onclick="showCard(4)">
+          <i class="fas fa-code"></i>
+          <h3>Web Development</h3>
+          <p>
+            From portfolio sites to full web platforms — built for creators.
+          </p>
+        </div>
+        <div class="service-card" onclick="showCard(5)">
+          <i class="fas fa-folder-open"></i>
+          <h3>Portfolios</h3>
+          <p>Showcase your work in a professional and stunning portfolio.</p>
+        </div>
+        <div class="service-card" onclick="showCard(6)">
+          <i class="fas fa-server"></i>
+          <h3>Minecraft Server</h3>
+          <p>Full Minecraft server setup, plugins, config & optimizations.</p>
+        </div>
+        <div class="service-card" onclick="showCard(7)">
+          <i class="fas fa-film"></i>
+          <h3>Video Editing</h3>
+          <p>Smooth edits with transitions, effects, and top-tier polish.</p>
+        </div>
+        <div class="service-card" onclick="showCard(8)">
+          <i class="fas fa-cubes"></i>
+          <h3>Texture Packs</h3>
+          <p>Custom texture packs tailored to your theme or play style.</p>
+        </div>
+        <div class="service-card" onclick="showCard(9)">
+          <i class="fas fa-clapperboard"></i>
+          <h3>Animation</h3>
+          <p>2D/3D animations to bring intros, logos, or ideas to life.</p>
+        </div>
+        <div class="service-card" onclick="showCard(10)">
+          <i class="fas fa-wand-magic-sparkles"></i>
+          <h3>Editing AI Tools</h3>
+          <p>
+            We use AI to assist fast, smart, and efficient editing workflows.
+          </p>
+        </div>
+        <div class="service-card" onclick="showCard(11)">
+          <i class="fas fa-comments"></i>
+          <h3>DC Server Setup</h3>
+          <p>Professional Discord setup with roles, bots, and security.</p>
+        </div>
+        <div class="service-card" onclick="showCard(12)">
+          <i class="fas fa-user"></i>
+          <h3>Skins</h3>
+          <p>Custom Minecraft skins for your character or server staff.</p>
+        </div>
+        <div class="service-card" onclick="showCard(13)">
+          <i class="fas fa-book"></i>
+          <h3>Courses</h3>
+          <p>We offer courses on editing, design, and server setup.</p>
+        </div>
+        <div class="service-card" onclick="showCard(14)">
+          <i class="fas fa-seedling"></i>
+          <h3>Grow-a-Garden</h3>
+          <p>Get Grow-a-Garden items like sheckles, pets, etc.</p>
+        </div>
+        <div class="service-card" onclick="showCard(16)">
+          <i class="fas fa-plug-circle-bolt"></i>
+          <h3>MC Plugins</h3>
+          <p>Glitch SMP, Token SMP, custom weapons, and more — ready to use!</p>
+        </div>
+      </div>
     </section>
 
     <!-- Overlay -->
@@ -136,162 +162,271 @@
 
     <!-- Popup Card -->
     <div id="popupCard" class="popup-card">
-        <div id="popupLoader" class="loading-overlay">
-            <div class="loader"></div>
-        </div>
-        <span class="close-btn" onclick="hideCard()">&times;</span>
-        <h2 id="popupTitle"></h2>
-        <p id="popupDesc"></p>
-        <img id="popupImage" src="" style="width:100%;border-radius:10px;display:none;margin-top:15px;" />
-        <video id="popupVideo" controls style="width:100%;border-radius:10px;display:none;margin-top:15px;">
-            <source id="popupVideoSrc" src="" type="video/mp4" />
-            Your browser does not support the video tag.
-        </video>
-        <div id="popupButtons" style="margin-top:15px;display:none;"></div>
+      <div id="popupLoader" class="loading-overlay">
+        <div class="loader"></div>
+      </div>
+      <span class="close-btn" onclick="hideCard()">&times;</span>
+      <h2 id="popupTitle"></h2>
+      <p id="popupDesc"></p>
+      <img
+        id="popupImage"
+        src=""
+        style="
+          width: 100%;
+          border-radius: 10px;
+          display: none;
+          margin-top: 15px;
+        "
+      />
+      <video
+        id="popupVideo"
+        controls
+        style="
+          width: 100%;
+          border-radius: 10px;
+          display: none;
+          margin-top: 15px;
+        "
+      >
+        <source id="popupVideoSrc" src="" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <div id="popupButtons" style="margin-top: 15px; display: none"></div>
     </div>
 
     <div class="contact-cta">
-        <h2>Ready to bring your ideas to life?</h2>
-        <a href="contact.html" class="contact-button"><i class="fas fa-paper-plane"></i> Order Now</a>
+      <h2>Ready to bring your ideas to life?</h2>
+      <a href="contact.html" class="contact-button"
+        ><i class="fas fa-paper-plane"></i> Order Now</a
+      >
     </div>
 
     <footer class="site-footer">
-        <div class="footer-main">
-            <p>&copy; 2025 <span class="brand">Vylance</span>. All Rights Reserved. (Version 1.0)</p>
-        </div>
-        <div class="footer-links">
-            <a href="#">Privacy & Policy</a>
-            <a href="#">Terms & Conditions</a>
-            <a href="#">Cookie Policy</a>
-        </div>
+      <div class="footer-main">
+        <p>
+          &copy; 2025 <span class="brand">Vylance</span>. All Rights Reserved.
+          (Version 1.0)
+        </p>
+      </div>
+      <div class="footer-links">
+        <a href="#">Privacy & Policy</a>
+        <a href="#">Terms & Conditions</a>
+        <a href="#">Cookie Policy</a>
+      </div>
     </footer>
 
     <!-- SCRIPT -->
     <script>
-        const services = {
-            1: { title: "Thumbnail", desc: "Custom YouTube thumbnails for high CTR.", image: "https://i.ibb.co/67sBVpHw/Thumbnail-2.png" },
-            2: { title: "Logos", desc: "Creative logo design to represent your brand.", image: "Assets/PFP 1.png" },
-            3: { title: "Banner", desc: "Bold banners for YouTube, Discord, and Twitch.", image: "https://i.ibb.co/wFgy8X76/80227-loat-banner-ig-hacking-tel.jpg" },
-            4: { title: "Web Development", desc: "Websites made for creators.", image: "https://i.ibb.co/JWSVxq4c/Screenshot-30.png", buttons: [{ text: "Visit Demo", url: "https://vylanceontop.vercel.app/" }] },
-            5: { title: "Portfolios", desc: "Modern portfolios to impress clients.", image: "https://i.ibb.co/0Rq6qsZN/website.png", buttons: [{ text: "See Portfolio", url: "https://portfoliozyrox.netlify.app/" }] },
-            6: { title: "Minecraft Server", desc: "We setup your server with optimization.", image: "https://i.ibb.co/CszsVXsB/Purple-Prison-Pv-P-Server.webp" },
-            7: { title: "Video Editing", desc: "Cinematic edits with polish.", video: "Assets/Video Editing.mp4" },
-            8: { title: "Texture Packs", desc: "Custom packs for your playstyle.", image: "https://i.ibb.co/hwnZXxX/txt-pack.png" },
-            9: { title: "Animation", desc: "Intros, outros, and logo animations.", video: "Assets/Animation.mp4" },
-            10: { title: "Editing AI Tools", desc: "Boost workflow with AI tools." },
-            11: { title: "DC Server Setup", desc: "Full Discord server setup.", image: "https://i.ibb.co/s9Zm6S3f/Screenshot-31.png", buttons: [{ text: "See Example", url: "https://discord.gg/EzcK3dkR" }] },
-            12: { title: "Skins", desc: "Custom Minecraft skins.", image: "https://i.ibb.co/Tx4K8bwP/acfb46c7-d48b-4372-b2de-4a682e8c13e4.png" },
-            13: { title: "Courses", desc: "🔥 CHATGPT COMPETITIVE ANALYSIS\n📊 Analyze ChatGPT & rivals\n🚀 Gain AI advantage" },
-            14: { title: "Grow-a-Garden", desc: "Buy pets, sheckles, and items.", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-0zMhEoNWW18_euh2UwuCOWoBrnkVMFQYww&s" },
-            16: {
-                title: "Minecraft Plugins",
-                desc: `🧩 Glitch SMP Plugin
+      const menuToggle = document.querySelector(".menu-toggle");
+      const navUl = document.querySelector(".sidemenu nav ul");
+
+      menuToggle.addEventListener("click", () => {
+        navUl.classList.toggle("active");
+      });
+    </script>
+
+    <script>
+      const services = {
+        1: {
+          title: "Thumbnail",
+          desc: "Custom YouTube thumbnails for high CTR.",
+          image: "https://i.ibb.co/67sBVpHw/Thumbnail-2.png",
+        },
+        2: {
+          title: "Logos",
+          desc: "Creative logo design to represent your brand.",
+          image: "Assets/PFP 1.png",
+        },
+        3: {
+          title: "Banner",
+          desc: "Bold banners for YouTube, Discord, and Twitch.",
+          image:
+            "https://i.ibb.co/wFgy8X76/80227-loat-banner-ig-hacking-tel.jpg",
+        },
+        4: {
+          title: "Web Development",
+          desc: "Websites made for creators.",
+          image: "https://i.ibb.co/JWSVxq4c/Screenshot-30.png",
+          buttons: [
+            { text: "Visit Demo", url: "https://vylanceontop.vercel.app/" },
+          ],
+        },
+        5: {
+          title: "Portfolios",
+          desc: "Modern portfolios to impress clients.",
+          image: "https://i.ibb.co/0Rq6qsZN/website.png",
+          buttons: [
+            {
+              text: "See Portfolio",
+              url: "https://portfoliozyrox.netlify.app/",
+            },
+          ],
+        },
+        6: {
+          title: "Minecraft Server",
+          desc: "We setup your server with optimization.",
+          image: "https://i.ibb.co/CszsVXsB/Purple-Prison-Pv-P-Server.webp",
+        },
+        7: {
+          title: "Video Editing",
+          desc: "Cinematic edits with polish.",
+          video: "Assets/Video Editing.mp4",
+        },
+        8: {
+          title: "Texture Packs",
+          desc: "Custom packs for your playstyle.",
+          image: "https://i.ibb.co/hwnZXxX/txt-pack.png",
+        },
+        9: {
+          title: "Animation",
+          desc: "Intros, outros, and logo animations.",
+          video: "Assets/Animation.mp4",
+        },
+        10: {
+          title: "Editing AI Tools",
+          desc: "Boost workflow with AI tools.",
+        },
+        11: {
+          title: "DC Server Setup",
+          desc: "Full Discord server setup.",
+          image: "https://i.ibb.co/s9Zm6S3f/Screenshot-31.png",
+          buttons: [
+            { text: "See Example", url: "https://discord.gg/EzcK3dkR" },
+          ],
+        },
+        12: {
+          title: "Skins",
+          desc: "Custom Minecraft skins.",
+          image:
+            "https://i.ibb.co/Tx4K8bwP/acfb46c7-d48b-4372-b2de-4a682e8c13e4.png",
+        },
+        13: {
+          title: "Courses",
+          desc: "🔥 CHATGPT COMPETITIVE ANALYSIS\n📊 Analyze ChatGPT & rivals\n🚀 Gain AI advantage",
+        },
+        14: {
+          title: "Grow-a-Garden",
+          desc: "Buy pets, sheckles, and items.",
+          image:
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-0zMhEoNWW18_euh2UwuCOWoBrnkVMFQYww&s",
+        },
+        16: {
+          title: "Minecraft Plugins",
+          desc: `🧩 Glitch SMP Plugin
             ⚔️ Mark SMP Plugin
             🌀 Bizarre SMP Plugin S2
             💰 Token SMP Plugin
             💪 Strength SMP Basic Plugin
             🛠️ Premade Custom Weapons`,
-                buttons: [{ text: "Order Now", url: "contact.html" }]
-            },
+          buttons: [{ text: "Order Now", url: "contact.html" }],
+        },
+      };
+      function showCard(id) {
+        const service = services[id];
+        document.getElementById("popupTitle").innerText = service.title;
+        document.getElementById("popupDesc").innerText = service.desc;
 
-        };
-        function showCard(id) {
-            const service = services[id];
-            document.getElementById("popupTitle").innerText = service.title;
-            document.getElementById("popupDesc").innerText = service.desc;
+        // Handle image
+        const img = document.getElementById("popupImage");
+        img.style.display = service.image ? "block" : "none";
+        if (service.image) img.src = service.image;
 
-            // Handle image
-            const img = document.getElementById("popupImage");
-            img.style.display = service.image ? "block" : "none";
-            if (service.image) img.src = service.image;
-
-            // Handle video
-            const video = document.getElementById("popupVideo");
-            const videoSrc = document.getElementById("popupVideoSrc");
-            video.pause(); video.removeAttribute("src"); videoSrc.removeAttribute("src"); video.load();
-            if (service.video) {
-                videoSrc.src = service.video;
-                video.load();
-                video.style.display = "block";
-            } else {
-                video.style.display = "none";
-            }
-
-            // Handle buttons
-            const buttonsDiv = document.getElementById("popupButtons");
-            buttonsDiv.innerHTML = "";
-            if (service.buttons) {
-                buttonsDiv.style.display = "block";
-                service.buttons.forEach(btn => {
-                    const a = document.createElement("a");
-                    a.href = btn.url; a.innerText = btn.text;
-                    a.target = "_blank"; a.className = "popup-button";
-                    buttonsDiv.appendChild(a);
-                });
-            } else {
-                buttonsDiv.style.display = "none";
-            }
-
-            // Show popup
-            document.getElementById("popupCard").classList.add("show");
-            document.getElementById("overlay").classList.add("show");
+        // Handle video
+        const video = document.getElementById("popupVideo");
+        const videoSrc = document.getElementById("popupVideoSrc");
+        video.pause();
+        video.removeAttribute("src");
+        videoSrc.removeAttribute("src");
+        video.load();
+        if (service.video) {
+          videoSrc.src = service.video;
+          video.load();
+          video.style.display = "block";
+        } else {
+          video.style.display = "none";
         }
 
-        function hideCard() {
-            document.getElementById("popupCard").classList.remove("show");
-            document.getElementById("overlay").classList.remove("show");
-            const video = document.getElementById("popupVideo");
-            video.pause(); video.currentTime = 0;
-        }
-        function showCard(id) {
-            // Show loader
-            document.getElementById("popupLoader").style.display = "block";
-            document.getElementById("popupCard").classList.add("show");
-            document.getElementById("overlay").classList.add("show");
-
-            setTimeout(() => {
-                const service = services[id];
-                document.getElementById("popupTitle").innerText = service.title;
-                document.getElementById("popupDesc").innerText = service.desc;
-
-                // Image
-                const img = document.getElementById("popupImage");
-                img.style.display = service.image ? "block" : "none";
-                if (service.image) img.src = service.image;
-
-                // Video
-                const video = document.getElementById("popupVideo");
-                const videoSrc = document.getElementById("popupVideoSrc");
-                video.pause(); video.removeAttribute("src"); videoSrc.removeAttribute("src"); video.load();
-                if (service.video) {
-                    videoSrc.src = service.video;
-                    video.load();
-                    video.style.display = "block";
-                } else {
-                    video.style.display = "none";
-                }
-
-                // Buttons
-                const buttonsDiv = document.getElementById("popupButtons");
-                buttonsDiv.innerHTML = "";
-                if (service.buttons) {
-                    buttonsDiv.style.display = "block";
-                    service.buttons.forEach(btn => {
-                        const a = document.createElement("a");
-                        a.href = btn.url; a.innerText = btn.text;
-                        a.target = "_blank"; a.className = "popup-button";
-                        buttonsDiv.appendChild(a);
-                    });
-                } else {
-                    buttonsDiv.style.display = "none";
-                }
-
-                // Hide loader after everything is set
-                document.getElementById("popupLoader").style.display = "none";
-            }, 400); // Adjust delay as needed
+        // Handle buttons
+        const buttonsDiv = document.getElementById("popupButtons");
+        buttonsDiv.innerHTML = "";
+        if (service.buttons) {
+          buttonsDiv.style.display = "block";
+          service.buttons.forEach((btn) => {
+            const a = document.createElement("a");
+            a.href = btn.url;
+            a.innerText = btn.text;
+            a.target = "_blank";
+            a.className = "popup-button";
+            buttonsDiv.appendChild(a);
+          });
+        } else {
+          buttonsDiv.style.display = "none";
         }
 
+        // Show popup
+        document.getElementById("popupCard").classList.add("show");
+        document.getElementById("overlay").classList.add("show");
+      }
+
+      function hideCard() {
+        document.getElementById("popupCard").classList.remove("show");
+        document.getElementById("overlay").classList.remove("show");
+        const video = document.getElementById("popupVideo");
+        video.pause();
+        video.currentTime = 0;
+      }
+      function showCard(id) {
+        // Show loader
+        document.getElementById("popupLoader").style.display = "block";
+        document.getElementById("popupCard").classList.add("show");
+        document.getElementById("overlay").classList.add("show");
+
+        setTimeout(() => {
+          const service = services[id];
+          document.getElementById("popupTitle").innerText = service.title;
+          document.getElementById("popupDesc").innerText = service.desc;
+
+          // Image
+          const img = document.getElementById("popupImage");
+          img.style.display = service.image ? "block" : "none";
+          if (service.image) img.src = service.image;
+
+          // Video
+          const video = document.getElementById("popupVideo");
+          const videoSrc = document.getElementById("popupVideoSrc");
+          video.pause();
+          video.removeAttribute("src");
+          videoSrc.removeAttribute("src");
+          video.load();
+          if (service.video) {
+            videoSrc.src = service.video;
+            video.load();
+            video.style.display = "block";
+          } else {
+            video.style.display = "none";
+          }
+
+          // Buttons
+          const buttonsDiv = document.getElementById("popupButtons");
+          buttonsDiv.innerHTML = "";
+          if (service.buttons) {
+            buttonsDiv.style.display = "block";
+            service.buttons.forEach((btn) => {
+              const a = document.createElement("a");
+              a.href = btn.url;
+              a.innerText = btn.text;
+              a.target = "_blank";
+              a.className = "popup-button";
+              buttonsDiv.appendChild(a);
+            });
+          } else {
+            buttonsDiv.style.display = "none";
+          }
+
+          // Hide loader after everything is set
+          document.getElementById("popupLoader").style.display = "none";
+        }, 400); // Adjust delay as needed
+      }
     </script>
-</body>
-
+  </body>
 </html>
