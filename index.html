@@ -83,29 +83,29 @@
 
           <!-- Right Showcase -->
           <div class="right-side">
-              <div class="showcase-wrapper">  
-                <div class="showcase-slider">
-                  <div class="slide active">
-                    <img src="Assets/thumbnail1.png" alt="Slide 1" />
-                    <div class="caption">Minecraft Thumbnail</div>
-                  </div>
-                  <div class="slide">
-                    <img src="Assets/thumbnail2.png" alt="Slide 2" />
-                    <div class="caption">Custom Banner</div>
-                  </div>
-                  <div class="slide">
-                    <img src="Assets/PFP 1.png" alt="Slide 3" />
-                    <div class="caption">Profile Picture</div>
-                  </div>
-                  <div class="slide">
-                    <img
-                      src="https://i.ibb.co/hwnZXxX/txt-pack.png"
-                      alt="Slide 4"
-                    />
-                    <div class="caption">Texture Pack</div>
-                  </div>
+            <div class="showcase-wrapper">
+              <div class="showcase-slider">
+                <div class="slide active">
+                  <img src="Assets/thumbnail1.png" alt="Slide 1" />
+                  <div class="caption">Minecraft Thumbnail</div>
+                </div>
+                <div class="slide">
+                  <img src="https://i.ibb.co/wFgy8X76/80227-loat-banner-ig-hacking-tel.jpg" alt="Slide 2" />
+                  <div class="caption">Custom Banner</div>
+                </div>
+                <div class="slide">
+                  <img src="Assets/PFP 1.png" alt="Slide 3" />
+                  <div class="caption">Profile Picture</div>
+                </div>
+                <div class="slide">
+                  <img
+                    src="https://i.ibb.co/hwnZXxX/txt-pack.png"
+                    alt="Slide 4"
+                  />
+                  <div class="caption">Texture Pack</div>
                 </div>
               </div>
+            </div>
           </div>
         </div>
       </div>
@@ -201,15 +201,66 @@
 
     <!-- Slider Script -->
     <script>
-      const slides = document.querySelectorAll(".slide");
-      let index = 0;
+      (() => {
+        const slides = document.querySelectorAll(".slide");
+        if (slides.length === 0) return;
 
-      setInterval(() => {
-        slides[index].classList.remove("active");
-        index = (index + 1) % slides.length;
-        slides[index].classList.add("active");
-      }, 6000);
+        let currentIndex = 0;
+        const slideCount = slides.length;
+        const slideInterval = 6000; // ms
+        let timerId = null;
+        let isPaused = false;
+
+        function showSlide(newIndex) {
+          if (newIndex === currentIndex) return;
+
+          slides[currentIndex].classList.remove("active");
+          slides[newIndex].classList.add("active");
+          currentIndex = newIndex;
+        }
+
+        function nextSlide() {
+          const nextIndex = (currentIndex + 1) % slideCount;
+          showSlide(nextIndex);
+        }
+
+        function startAutoSlide() {
+          timerId = setInterval(() => {
+            if (!isPaused) nextSlide();
+          }, slideInterval);
+        }
+
+        function stopAutoSlide() {
+          clearInterval(timerId);
+          timerId = null;
+        }
+
+        // Pause slider when mouse hovers over any slide
+        slides.forEach((slide) => {
+          slide.addEventListener("mouseenter", () => {
+            isPaused = true;
+          });
+          slide.addEventListener("mouseleave", () => {
+            isPaused = false;
+          });
+        });
+
+        // Start auto sliding
+        startAutoSlide();
+
+        // Optional: expose methods if you want to control slider externally
+        window.sliderControls = {
+          next: nextSlide,
+          pause: () => {
+            isPaused = true;
+          },
+          play: () => {
+            isPaused = false;
+          },
+        };
+      })();
     </script>
+
     <!-- __________ANIMATION SCRIPT_____________________ -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
